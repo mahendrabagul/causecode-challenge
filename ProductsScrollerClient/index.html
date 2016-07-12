@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  	<head>
+	    <meta charset="utf-8">
+	    <title>Products Scroller App</title>
+	    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  		<script src="js/jquery/jquery-3.0.0.min.js"></script>
+		<script src="js/angular/angular.js"></script>
+	    <script src="js/scrollDirective/ng-infinite-scroll.min.js"></script>
+	    <script src="js/bootstrap/bootstrap.min.js"></script>
+		<script src="app/app.js"></script>
+  	</head>
+  	<body>
+  	    <!--Navbar(Header) Content-->
+	    <nav class="navbar navbar-default navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="/ProductsScrollerClient/">Products Scroller App</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="aboutme.html">About me</a></li>
+	            <li><a href="https://www.facebook.com/mahendrahbagul">Facebook Profile</a></li>
+	            <li><a href="https://www.linkedin.com/in/bagulmahendra">LinkedIn Profile</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+    <!--End of Navbar(Header) Content-->
+
+	<!--Container(Main) Content -->
+		<div class="container">
+		 	<div class="page-header">
+	        	<h3>List of Products</h3>
+	      	</div>
+		  	<div class="jumbotron" style="align:center">
+				<div ng-app='infiniteScrollApp' ng-controller='ScrollingController'>
+				  	<div infinite-scroll='productsScrollServer.nextPage()' infinite-scroll-disabled='productsScrollServer.busy' infinite-scroll-distance='1'>
+					    <div ng-repeat='product in productsScrollServer.products'>
+					    	<p  
+					    	style=" width:100%; height:auto;position:relative;background:#66cdff;padding:20px;">
+					    	<span style="align:left"><strong>Product Name :</strong> {{product.name}}</span>
+					    	<br/>
+					    	<span style="align:right"><strong>Developed by :</strong> {{product.developer}}</span>
+					    	</p>
+					    </div>
+				    <div ng-show='productsScrollServer.busy'>Loading data...</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	<!--End of Container(Main) Content -->
+
+    <!--Bottom(Footer) Content -->
+		<div class="navbar navbar-default navbar-fixed-bottom" style="height: auto">
+			<div class="container">
+				<p class="navbar-text pull-left">
+					Designed by:<b> Mahendra Bagul (+918484947814)</b>
+				</p>
+				<p class="navbar-text pull-right">
+					Say thanks at <b><a href="mailto:bagulm123@gmail.com">bagulm123@gmail.com</a></b>
+				</p>
+			</div>
+		</div>
+	<!-- End of Bottom(Footer) Content -->
+  </body>
+</html>
