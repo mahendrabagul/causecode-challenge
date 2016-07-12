@@ -80,6 +80,9 @@
 						<webApp>
 							<contextPath>/${project.artifactId}</contextPath>
 						</webApp>
+						<httpConnector>
+							<port>8181</port>
+						</httpConnector>
 					</configuration>
 				</plugin>
 				<plugin>
