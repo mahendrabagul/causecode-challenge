@@ -1,6 +1,6 @@
 ### Steps to run this application on your system ###
 
-* Clone repository to your system using git clone https://mahendrabagul@bitbucket.org/mahendrabagul/challenge.git
+* Clone repository to your system using git clone git@github.com:mahendrabagul/causecode-challenge.git
 * This needs to have installed Maven 3.x and Java on your machine.
 * Traverse to the root directory of project [ProductsScrollerServer/] (where pom.xml is present)
 * Now, mvn jetty:run from terminal.
